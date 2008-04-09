@@ -1,0 +1,16 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+	"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<description>A demo of creating a Swing app using Spring
+		ApplicationContext Internationalization/Localization.
+	</description>
+	
+	<!-- A source for I18N messages -->
+	<bean id="messageSource"
+      class="org.springframework.context.support.ResourceBundleMessageSource">
+  		<!-- ResourceBundle files are demo.properties, demo_xx.properties, ... -->
+  		<property name="basename" value="demo"/>
+  	</bean>
+</beans>
