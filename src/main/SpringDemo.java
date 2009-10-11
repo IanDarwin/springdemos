@@ -1,6 +1,5 @@
 package main;
 
-import java.awt.Dimension;
 import java.awt.FlowLayout;
 
 import javax.swing.JButton;
@@ -9,8 +8,6 @@ import javax.swing.JLabel;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.sun.org.apache.xalan.internal.xsltc.compiler.FlowList;
 
 /**
  * Create a Swing app using Spring to create the Components.
