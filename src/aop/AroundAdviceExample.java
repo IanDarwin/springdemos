@@ -26,17 +26,12 @@ public class AroundAdviceExample {
 			}
 		}
 		
-		Object ret = pjp.proceed();
-		
-		// do after work here
-		System.out.println("Returning from " + methodName);
-		
-		return ret;
-	}
-	
-	@Override
-	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return super.equals(obj);
+		try {
+			Object ret = pjp.proceed();
+			return ret;
+		finally {
+			// do after work here, even if Exception thrown
+			System.out.println("Returning from " + methodName);
+		}
 	}
 }
