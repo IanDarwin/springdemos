@@ -6,4 +6,8 @@ public class ServiceImpl implements Service {
 		System.out.println("ServiceImpl.doSomething()");
 	}
 
+	public void getQ() {
+		System.out.println("ERROR: got into ServiceImpl.getQ()");
+	}
+
 }

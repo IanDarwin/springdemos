@@ -16,5 +16,11 @@ public class SpringDemo {
 		
 		Service s = factory.getBean("service", Service.class);
 		s.doSomething();
+		try {
+			s.getQ();
+			System.err.println("DID NOT THROW EXPECTED SECURITY EXCEPTION");
+		} catch (SecurityException e) {
+			System.out.println("Caught expected exception");
+		}
 	}
 }
