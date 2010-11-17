@@ -11,7 +11,7 @@ import org.aspectj.lang.annotation.Aspect;
 @Aspect
 public class AroundAdviceExample {
 	
-	@Around("execution(* main.SpringIntl.*(..))")
+	@Around("execution(* service.*.*(..))")
 	public Object around(ProceedingJoinPoint pjp) throws Throwable {
 		System.out.println("AroundAdviceExample.around()");
 		// do before work here
