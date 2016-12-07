@@ -1,0 +1,5 @@
+= springdemos
+
+Just a few simple demos of doing a few tasks using the Spring Framework.
+
+Dependency management by Maven.
