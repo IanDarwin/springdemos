@@ -21,14 +21,20 @@ public class JdbcTemplateLambda {
 		return new JdbcTemplate(dataSource).query("Select * from MusicRecording", mapper);
 	}
 	
-	private static RowMapper<MusicRecording>  mapper = (rs, rownum) -> {
+	// The old way:
+	// private RowMapper<MusicRecording> mapper = new RowMapper<MusicRecording> {
+	//	public MusicRecording mapRow(ResultSet rs, int rownum) {
+	
+	// The Java 8 way:
+	
+	private RowMapper<MusicRecording>  mapper = (rs, rownum) -> {
 		MusicRecording rec = new MusicRecording();
 		rec.setId(rs.getInt("id"));
 		rec.setTitle(rs.getString("title"));
 		return rec;
 	};
 	
-	// Note that if the mapper were only used in one place ever, we would
+	// Note that if the mapper were only used in one place ever, we could
 	// write it inline, giving in an even shorter form:
 	public List<MusicRecording> getAllRecordingsConcise() {
 		return new JdbcTemplate(dataSource).query("Select * from MusicRecording", (rs, rownum) -> {
